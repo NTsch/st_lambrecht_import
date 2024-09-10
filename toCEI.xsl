@@ -52,8 +52,23 @@
         <cei:text type='charter'>
             <cei:front/>
             <cei:body>
+                <cei:idno>
+                    <xsl:analyze-string select="." regex="(I/\d+)">
+                        <xsl:matching-substring>
+                            <xsl:value-of select="regex-group(1)"/>
+                        </xsl:matching-substring>
+                    </xsl:analyze-string>
+                </cei:idno>
                 <cei:chDesc>
                     <xsl:copy-of select="$regest"/>
+                    <cei:issued>
+                        <cei:date>
+                            <xsl:value-of select="normalize-space(tokenize(., '[–\-,]')[2])"/>
+                        </cei:date>
+                        <cei:place>
+                            <xsl:value-of select="normalize-space(tokenize(., '[,:]')[3])"/>
+                        </cei:place>
+                    </cei:issued>
                 </cei:chDesc>
             </cei:body>
         </cei:text>
