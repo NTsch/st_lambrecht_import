@@ -49,24 +49,44 @@
                 <xsl:copy-of select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>
             </cei:abstract>
         </xsl:variable>
+        <xsl:variable name="idno">
+            <xsl:analyze-string select="." regex="(I/\d+\w*)">
+                <xsl:matching-substring>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:matching-substring>
+            </xsl:analyze-string>
+        </xsl:variable>
+        <xsl:variable name="place">
+            <xsl:analyze-string select="." regex=",([^,]+):\s*$">
+                <xsl:matching-substring>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:matching-substring>
+            </xsl:analyze-string>
+        </xsl:variable>
+        <xsl:variable name="date">
+            <xsl:choose>
+                <xsl:when test="$place != ''">
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(substring-before(., $place), $idno), '^ *[–-]', ''), '[,–-]+ *$', ''))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(., $idno), '^ *[–-]', ''), '[:,–-]+ *$', ''))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <cei:text type='charter'>
             <cei:front/>
             <cei:body>
                 <cei:idno>
-                    <xsl:analyze-string select="." regex="(I/\d+)">
-                        <xsl:matching-substring>
-                            <xsl:value-of select="regex-group(1)"/>
-                        </xsl:matching-substring>
-                    </xsl:analyze-string>
+                    <xsl:value-of select="normalize-space($idno)"/>
                 </cei:idno>
                 <cei:chDesc>
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>
                         <cei:date>
-                            <xsl:value-of select="normalize-space(tokenize(., '[–\-,]')[2])"/>
+                            <xsl:value-of select="$date"/>
                         </cei:date>
                         <cei:place>
-                            <xsl:value-of select="normalize-space(tokenize(., '[,:]')[3])"/>
+                            <xsl:value-of select="normalize-space($place)"/>
                         </cei:place>
                     </cei:issued>
                 </cei:chDesc>
@@ -87,5 +107,6 @@
             <xsl:apply-templates/>
         </cei:hi>
     </xsl:template>
+    <!--Siegel mit "S:", nicht verlässlich fett-->
     
 </xsl:stylesheet>
