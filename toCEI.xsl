@@ -46,8 +46,15 @@
         <!--get every following sibling p without color and whose nearest predecessor headline is the current headline-->
         <xsl:variable name="regest">
             <cei:abstract>
-                <xsl:copy-of select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>
+                <!--<xsl:copy-of select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>-->
+                <xsl:element name="cei:{local-name()}">
+                    <xsl:copy-of select="@*"/>
+                    <xsl:apply-templates select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>
+                </xsl:element>
             </cei:abstract>
+        </xsl:variable>
+        <xsl:variable name="endline">
+            <xsl:value-of select="tokenize($regest/cei:abstract, ' – ')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
             <xsl:analyze-string select="." regex="(I/\d+\w*)">
@@ -57,7 +64,7 @@
             </xsl:analyze-string>
         </xsl:variable>
         <xsl:variable name="place">
-            <xsl:analyze-string select="." regex=",([^,]+):\s*$">
+            <xsl:analyze-string select="." regex=",([^,:]+)[:.]?\s*$">
                 <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
                 </xsl:matching-substring>
@@ -89,6 +96,11 @@
                             <xsl:value-of select="normalize-space($place)"/>
                         </cei:place>
                     </cei:issued>
+                    <cei:witnessOrig>
+                        <cei:traditioForm>
+                            <xsl:value-of select="$endline"/>
+                        </cei:traditioForm>
+                    </cei:witnessOrig>
                 </cei:chDesc>
             </cei:body>
         </cei:text>

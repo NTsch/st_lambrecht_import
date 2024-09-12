@@ -17,7 +17,7 @@
         </fileDesc>
         <revisionDesc>
             <listChange>
-                <change><name/><date>2024-09-06T05:17:30.915822800</date></change>
+                <change><name/><date>2024-09-11T10:38:16.302180700</date></change>
             </listChange>
         </revisionDesc>
     </teiHeader>
@@ -445,8 +445,8 @@
                     >v</hi><hi rend="italic">tschalci de Nitperch, Adalbero de Tomchenstein, Otaker
                     de Nidekke</hi>“. – Or. Perg. <hi rend="bold">S</hi>: Markgraf Otakar von
                 Steier, abhangend gut erhalten (<hi rend="smallcaps">Zahn</hi> I/548).</p>
-            <p><hi rend="background-color(#ffff00)underline">Ad anno 1172 - , -</hi><hi
-                    rend="background-color(#ffff00)">:</hi></p>
+            <p><hi rend="background-color(#ff0000)underline">Ad anno 1172 - , -</hi><hi
+                    rend="background-color(#ff0000)">:</hi></p>
             <p><hi rend="italic">Pro abbate Liutoldo,</hi>
                 <hi rend="italic">Rudolfus prior de sancto Lamberto est constitutus</hi>. <hi
                     rend="italic">Quo post parvum tempus refutante Irmbertus abbas sancti Michahelis
@@ -701,7 +701,7 @@
                     rend="smallcaps">Zahn</hi> II).</p>
             <div type="div1">
                 <div type="div2">
-                    <div type="div3" rend="P4">
+                    <div type="div3" rend="P3">
                         <head>I/50a – 1217 II 04, Lateran:</head>
                         <p>Papst Honorius (III.) befiehlt dem Erzbischofe Eberhard von <hi
                                 rend="italic">Salzburg</hi> sein gewalttätiges Vorgehen gegen
@@ -1574,7 +1574,7 @@
                             rend="italic">Würflach</hi> gelegenes Haus gegen Zahlung von 2 Pfund
                         Wiener Pfennigen abgetreten habe. – Or. Perg. <hi rend="bold">S</hi>:
                         Hermann von Kranichberg, ½ verloren.</p>
-                    <div type="div3" rend="P4">
+                    <div type="div3" rend="P3">
                         <head>I/125 – 1290 III 07, Bruck:</head>
                         <p>Abt Friedrich von <hi rend="italic">St. Lambrecht</hi> beurkundet die
                             Austragung eines Streites um einen Zehent in <hi rend="italic"
@@ -1583,7 +1583,7 @@
                             Friedrich von Apfaltern. – Or. Perg. <hi rend="bold">S</hi>: Abt, sehr
                             beschädigt.</p>
                     </div>
-                    <div type="div3" rend="P4">
+                    <div type="div3" rend="P3">
                         <head>I/126 – 1290 II 21, Graz:</head>
                         <p>Bischof Leopold von <hi rend="italic">Seckau</hi> bestätigt die durch den
                             Grazer Bürger Volkmar erfolgte Schenkung eines Weinzehents im Gebiete
@@ -1599,7 +1599,7 @@
                             Ausstellers; <hi rend="bold">S4</hi>: Leutold von Dürnstein, 
                             beschädigt.</p>
                     </div>
-                    <div type="div3" rend="P3">
+                    <div type="div3" rend="P4">
                         <head><hi rend="background-color(#ff0000)">I/128 - (c. 1290 – 93) </hi><hi
                                 rend="background-color(#ff0000)strikethrough">August 01,
                                 Kindberg</hi><hi rend="background-color(#ff0000)">:</hi></head>
@@ -1626,7 +1626,7 @@
                             Friedrich von <hi rend="italic">St. Lambrecht</hi> für einen bei <hi
                                 rend="italic">Milsa</hi> gelegenen Mansus gibt. – Or. Perg. <hi
                                 rend="bold">S</hi>: Leutold von Dürnstein, gut erhalten.</p>
-                        <p rend="background-color(#ffff00)">131a – 1295 VI 04, -:</p>
+                        <p><hi rend="background-color(#ffff00)">I/131a – 1295 VI 04, -:</hi></p>
                         <p>Abt Friedrich von <hi rend="italic">St. Lambrecht</hi> beurkundet einen
                             Vergleich zwischen seinem, und dem Kloster Admont strittige
                             Gebietsgrenzen zu Sölsnitz im Mürztal. <hi rend="underline">Zeugen</hi>:
