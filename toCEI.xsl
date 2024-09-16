@@ -98,8 +98,23 @@
                     </cei:issued>
                     <cei:witnessOrig>
                         <cei:traditioForm>
-                            <xsl:value-of select="$endline"/>
+                            <xsl:if test="contains($endline, 'Or.')">
+                                <xsl:text>Original</xsl:text>
+                            </xsl:if>
                         </cei:traditioForm>
+                        <cei:archIdentifier/>
+                        <cei:physicalDesc>
+                            <cei:material>
+                                <xsl:if test="contains($endline, 'Perg.')">
+                                <xsl:text>Pergament</xsl:text>
+                            </xsl:if>
+                            </cei:material>
+                        </cei:physicalDesc>
+                        <cei:auth>
+                            <cei:sealDesc>
+                                <xsl:value-of select="substring-after(normalize-space(string-join($endline//text())), 'S:')"/>
+                            </cei:sealDesc>
+                        </cei:auth>
                     </cei:witnessOrig>
                 </cei:chDesc>
             </cei:body>
