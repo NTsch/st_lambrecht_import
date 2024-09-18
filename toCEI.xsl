@@ -41,20 +41,18 @@
         </cei:cei>
     </xsl:template>
     
-    <xsl:template match="p[@rend='background-color(#ffff00)' or hi[@rend='background-color(#ffff00)']]">
-        <xsl:variable name="pos" select="position()"/>
-        <!--get every following sibling p without color and whose nearest predecessor headline is the current headline-->
+    <xsl:template match="p[contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]]">
+        <!--get the following sibling p without color-->
         <xsl:variable name="regest">
             <cei:abstract>
-                <!--<xsl:copy-of select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>-->
                 <xsl:element name="cei:{local-name()}">
                     <xsl:copy-of select="@*"/>
-                    <xsl:apply-templates select="following-sibling::p[not(contains(@rend, 'background-color') or hi[contains(@rend, 'background-color')]) and count(preceding-sibling::p[contains(@rend, 'background-color') or hi[@rend='background-color(#ffff00)']]) = $pos]"/>
+                    <xsl:apply-templates select="following-sibling::p[not(contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')])][1]"/>
                 </xsl:element>
             </cei:abstract>
         </xsl:variable>
         <xsl:variable name="endline">
-            <xsl:value-of select="tokenize($regest/cei:abstract, ' – ')[last()]"/>
+            <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
             <xsl:analyze-string select="." regex="(I/\d+\w*)">
@@ -73,10 +71,10 @@
         <xsl:variable name="date">
             <xsl:choose>
                 <xsl:when test="$place != ''">
-                    <xsl:value-of select="normalize-space(replace(replace(substring-after(substring-before(., $place), $idno), '^ *[–-]', ''), '[,–-]+ *$', ''))"/>
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(substring-before(., $place), $idno), '^ *[–\-]', ''), '[,–\-\s]+$', ''))"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="normalize-space(replace(replace(substring-after(., $idno), '^ *[–-]', ''), '[:,–-]+ *$', ''))"/>
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(., $idno), '^ *[–\-]', ''), '[:,–\-\s]+$', ''))"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -112,7 +110,11 @@
                         </cei:physicalDesc>
                         <cei:auth>
                             <cei:sealDesc>
-                                <xsl:value-of select="substring-after(normalize-space(string-join($endline//text())), 'S:')"/>
+                                <xsl:for-each select="tokenize(string-join($regest/cei:abstract//text()), 'S\d?:')[position() > 1]">
+                                    <cei:seal>
+                                        <xsl:value-of select="normalize-space(.)"/>
+                                    </cei:seal>
+                                </xsl:for-each>
                             </cei:sealDesc>
                         </cei:auth>
                     </cei:witnessOrig>
@@ -134,6 +136,4 @@
             <xsl:apply-templates/>
         </cei:hi>
     </xsl:template>
-    <!--Siegel mit "S:", nicht verlässlich fett-->
-    
 </xsl:stylesheet>
