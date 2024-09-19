@@ -96,14 +96,14 @@
                     </cei:issued>
                     <cei:witnessOrig>
                         <cei:traditioForm>
-                            <xsl:if test="contains($endline, 'Or.')">
+                            <xsl:if test="contains($endline, '– Or. Perg.')">
                                 <xsl:text>Original</xsl:text>
                             </xsl:if>
                         </cei:traditioForm>
                         <cei:archIdentifier/>
                         <cei:physicalDesc>
                             <cei:material>
-                                <xsl:if test="contains($endline, 'Perg.')">
+                                <xsl:if test="contains($endline, '– Or. Perg.')">
                                 <xsl:text>Pergament</xsl:text>
                             </xsl:if>
                             </cei:material>
@@ -124,9 +124,13 @@
     </xsl:template>
     
     <xsl:template match="p">
+        <xsl:variable name="endline-begin" select="count(.//text()[contains(., '– Or. Perg.')]/preceding-sibling::node())"/>
         <cei:p>
             <xsl:copy-of select="@*"/>
-            <xsl:apply-templates/>
+            <!--<xsl:apply-templates/>-->
+            <xsl:for-each select="node()[position()&lt;=$endline-begin]">
+                <xsl:apply-templates select="."/>
+            </xsl:for-each>
         </cei:p>
     </xsl:template>
     
@@ -136,4 +140,5 @@
             <xsl:apply-templates/>
         </cei:hi>
     </xsl:template>
+    
 </xsl:stylesheet>
