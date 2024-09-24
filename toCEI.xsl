@@ -35,7 +35,7 @@
             </cei:teiHeader>
             <cei:text>
                 <cei:group>
-                    <xsl:apply-templates select="//text/body//p[@rend='background-color(#ffff00)' or hi[@rend='background-color(#ffff00)']]"/>
+                    <xsl:apply-templates select="//text/body//*[@rend='background-color(#ffff00)' or hi[@rend='background-color(#ffff00)']]"/>
                 </cei:group>
             </cei:text>
         </cei:cei>
@@ -55,7 +55,7 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I/\d+\w*)">
+            <xsl:analyze-string select="." regex="(I/\d+ ?\w*)">
                 <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
                 </xsl:matching-substring>
