@@ -5,7 +5,9 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
 
 <results>{
 let $output := collection('data/output')
-for $data in $output//cei:date
-return <result file="{substring-after($data/base-uri(), 'output/')}">{$data}</result>
+for $data in $output//cei:place
+return <result file="{(substring-after($data/base-uri(), 'output/'), $data/ancestor::cei:text[@type="charter"]//cei:idno/text())}">{$data}</result>
 }</results>
 
+(:let $output := collection('data/output')
+return $output//cei:text[@type="charter"]//cei:abstract/cei:p[not(normalize-space())]:)

@@ -62,7 +62,7 @@
             </xsl:analyze-string>
         </xsl:variable>
         <xsl:variable name="place">
-            <xsl:analyze-string select="." regex=",([^,:]+)[:.]?\s*$">
+            <xsl:analyze-string select="." regex=",([^,:\.]+)[:\.]?\s*$">
                 <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
                 </xsl:matching-substring>
@@ -124,7 +124,7 @@
     </xsl:template>
     
     <xsl:template match="p">
-        <xsl:variable name="endline-begin" select="count(.//text()[matches(., '\s*[–\-]\s*Or\.\s*Perg\.?')]/preceding-sibling::node())"/>
+        <xsl:variable name="endline-begin" select="count(.//text()[matches(., '\s*[–\-]\s*\d*\s*Or\.\s*Perg\.?') and not(contains(., 'Abschrift'))]/preceding-sibling::node())"/>
         <xsl:choose>
             <xsl:when test="$endline-begin != 0">
                 <!--get all text before Org. Perg.-->
@@ -133,7 +133,7 @@
                     <xsl:for-each select="node()[position() &lt;= $endline-begin]">
                         <xsl:apply-templates select="."/>
                     </xsl:for-each>
-                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="(.+)\s*[–\-]\s*Or\.\s*Perg\.?">
+                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="(.+)\s*\d*\s*[–\-]\s*Or\.\s*Perg\.?">
                         <xsl:matching-substring>
                             <xsl:value-of select="normalize-space(regex-group(1))"/>
                         </xsl:matching-substring>
