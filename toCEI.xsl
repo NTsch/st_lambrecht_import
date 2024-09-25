@@ -35,7 +35,7 @@
             </cei:teiHeader>
             <cei:text>
                 <cei:group>
-                    <xsl:apply-templates select="//text/body//*[@rend='background-color(#ffff00)' or hi[@rend='background-color(#ffff00)']]"/>
+                    <xsl:apply-templates select="//text/body//p[@rend='background-color(#ffff00)' or hi[@rend='background-color(#ffff00)']]"/>
                 </cei:group>
             </cei:text>
         </cei:cei>
@@ -124,14 +124,28 @@
     </xsl:template>
     
     <xsl:template match="p">
-        <xsl:variable name="endline-begin" select="count(.//text()[contains(., '– Or. Perg.')]/preceding-sibling::node())"/>
-        <cei:p>
-            <xsl:copy-of select="@*"/>
-            <!--<xsl:apply-templates/>-->
-            <xsl:for-each select="node()[position()&lt;=$endline-begin]">
-                <xsl:apply-templates select="."/>
-            </xsl:for-each>
-        </cei:p>
+        <xsl:variable name="endline-begin" select="count(.//text()[matches(., '\s*[–\-]\s*Or\.\s*Perg\.?')]/preceding-sibling::node())"/>
+        <xsl:choose>
+            <xsl:when test="$endline-begin != 0">
+                <!--get all text before Org. Perg.-->
+                <cei:p>
+                    <xsl:copy-of select="@*"/>
+                    <xsl:for-each select="node()[position() &lt;= $endline-begin]">
+                        <xsl:apply-templates select="."/>
+                    </xsl:for-each>
+                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="(.+)\s*[–\-]\s*Or\.\s*Perg\.?">
+                        <xsl:matching-substring>
+                            <xsl:value-of select="normalize-space(regex-group(1))"/>
+                        </xsl:matching-substring>
+                    </xsl:analyze-string>
+                </cei:p>
+            </xsl:when>
+            <xsl:otherwise>
+                <cei:p>
+                    <xsl:apply-templates/>
+                </cei:p>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="hi">
