@@ -55,26 +55,27 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I/\d+ ?\w*)">
+            <xsl:analyze-string select="." regex="(I+/\d+\s?\w*)">
                 <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
                 </xsl:matching-substring>
             </xsl:analyze-string>
         </xsl:variable>
         <xsl:variable name="place">
-            <xsl:analyze-string select="." regex=",([^,:\.]+)[:\.]?\s*$">
+            <!--don't include \. in the exception for group 1, it eliminates e.g. St. Lambrecht-->
+            <xsl:analyze-string select="." regex=",([^,:]+)[:\.]?\s*$">
                 <xsl:matching-substring>
-                    <xsl:value-of select="regex-group(1)"/>
+                    <xsl:value-of select="replace(regex-group(1), '\.$', '')"/>
                 </xsl:matching-substring>
             </xsl:analyze-string>
         </xsl:variable>
         <xsl:variable name="date">
             <xsl:choose>
                 <xsl:when test="$place != ''">
-                    <xsl:value-of select="normalize-space(replace(replace(substring-after(substring-before(., $place), $idno), '^ *[–\-]', ''), '[,–\-\s]+$', ''))"/>
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(substring-before(., $place), $idno), '^\s*[–\-]', ''), '[,–\-\s]+$', ''))"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="normalize-space(replace(replace(substring-after(., $idno), '^ *[–\-]', ''), '[:,–\-\s]+$', ''))"/>
+                    <xsl:value-of select="normalize-space(replace(replace(substring-after(., $idno), '^\s*[–\-]', ''), '[:,–\-\s]+$', ''))"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -88,6 +89,8 @@
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>
                         <cei:date>
+                            <cei:test><xsl:value-of select="$idno"/></cei:test>
+                            <cei:test><xsl:value-of select="$place"/></cei:test>
                             <xsl:value-of select="$date"/>
                         </cei:date>
                         <cei:place>
