@@ -42,7 +42,7 @@
     </xsl:template>
     
     <xsl:template match="p[contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]]">
-        <!--get the following sibling p without color-->
+        <!--get the following sibling p that is not marked with color-->
         <xsl:variable name="regest">
             <cei:abstract>
                 <xsl:element name="cei:{local-name()}">
@@ -51,11 +51,22 @@
                 </xsl:element>
             </cei:abstract>
         </xsl:variable>
+        
+        <!--only make charters for regests that actually have content, and not just "Inhalt?"-->
+        <xsl:if test="not($regest[//text()[matches(., 'Inhalt\s*\?')]])">
+            <xsl:call-template name="regest_with_content">
+                <xsl:with-param name="regest" select="$regest"/>
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="regest_with_content">
+        <xsl:param name="regest"/>
         <xsl:variable name="endline">
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+\s?\w*)">
+            <xsl:analyze-string select="." regex="(I+/\d+\s?\w*/?\S?)">
                 <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
                 </xsl:matching-substring>
@@ -63,7 +74,7 @@
         </xsl:variable>
         <xsl:variable name="place">
             <!--don't include \. in the exception for group 1, it eliminates e.g. St. Lambrecht-->
-            <xsl:analyze-string select="." regex=",([^,:]+)[:\.]?\s*$">
+            <xsl:analyze-string select="." regex=",([^,:]+)[:\.]?\s*[^\-]*$">
                 <xsl:matching-substring>
                     <xsl:value-of select="replace(regex-group(1), '\.$', '')"/>
                 </xsl:matching-substring>
@@ -89,8 +100,6 @@
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>
                         <cei:date>
-                            <cei:test><xsl:value-of select="$idno"/></cei:test>
-                            <cei:test><xsl:value-of select="$place"/></cei:test>
                             <xsl:value-of select="$date"/>
                         </cei:date>
                         <cei:place>
@@ -99,16 +108,21 @@
                     </cei:issued>
                     <cei:witnessOrig>
                         <cei:traditioForm>
-                            <xsl:if test="contains($endline, '– Or. Perg.')">
+                            <xsl:if test="contains($endline, '– Or. P')">
                                 <xsl:text>Original</xsl:text>
                             </xsl:if>
                         </cei:traditioForm>
                         <cei:archIdentifier/>
                         <cei:physicalDesc>
                             <cei:material>
-                                <xsl:if test="contains($endline, '– Or. Perg.')">
-                                <xsl:text>Pergament</xsl:text>
-                            </xsl:if>
+                                <xsl:choose>
+                                    <xsl:when test="contains($endline, '– Or. Perg')">
+                                        <xsl:text>Pergament</xsl:text>
+                                    </xsl:when>
+                                    <xsl:when test="contains($endline, '– Or. Pap')">
+                                        <xsl:text>Papier</xsl:text>
+                                    </xsl:when>
+                                </xsl:choose>
                             </cei:material>
                         </cei:physicalDesc>
                         <cei:auth>
@@ -127,16 +141,16 @@
     </xsl:template>
     
     <xsl:template match="p">
-        <xsl:variable name="endline-begin" select="count(.//text()[matches(., '\s*[–\-]\s*\d*\s*Or\.\s*Perg\.?') and not(contains(., 'Abschrift'))]/preceding-sibling::node())"/>
         <xsl:choose>
-            <xsl:when test="$endline-begin != 0">
-                <!--get all text before Org. Perg.-->
+            <xsl:when test=".[text()[contains(., ' – ') and not(./following-sibling::text()[contains(., ' – ')])]]">
+                <!--get all text before the endline after " – ", usually followed by "Org. P"-->
+                <xsl:variable name="endline-begin" select="count(.//text()[contains(., ' – ') and not(./following-sibling::text()[contains(., ' – ')])]/preceding-sibling::node())"/>
                 <cei:p>
                     <xsl:copy-of select="@*"/>
                     <xsl:for-each select="node()[position() &lt;= $endline-begin]">
                         <xsl:apply-templates select="."/>
                     </xsl:for-each>
-                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="(.+)\s*\d*\s*[–\-]\s*Or\.\s*Perg\.?">
+                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="([\s\S]+)–">
                         <xsl:matching-substring>
                             <xsl:value-of select="normalize-space(regex-group(1))"/>
                         </xsl:matching-substring>
