@@ -42,12 +42,14 @@
     </xsl:template>
     
     <xsl:template match="p[contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]]">
+        <xsl:variable name="full_text" select="following-sibling::p[not(contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')])][1]"/>
+
         <!--get the following sibling p that is not marked with color-->
         <xsl:variable name="regest">
             <cei:abstract>
                 <xsl:element name="cei:{local-name()}">
                     <xsl:copy-of select="@*"/>
-                    <xsl:apply-templates select="following-sibling::p[not(contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')])][1]"/>
+                    <xsl:apply-templates select="$full_text"/>
                 </xsl:element>
             </cei:abstract>
         </xsl:variable>
@@ -56,19 +58,21 @@
         <xsl:if test="not($regest[//text()[matches(., 'Inhalt\s*\?')]])">
             <xsl:call-template name="regest_with_content">
                 <xsl:with-param name="regest" select="$regest"/>
+                <xsl:with-param name="full_text" select="$full_text"/>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
     
     <xsl:template name="regest_with_content">
         <xsl:param name="regest"/>
+        <xsl:param name="full_text"/>
         <xsl:variable name="endline">
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+\s?\w*/?\S?)">
+            <xsl:analyze-string select="." regex="(I+/\d+.*)[-–].*\d{{4}}">
                 <xsl:matching-substring>
-                    <xsl:value-of select="regex-group(1)"/>
+                    <xsl:value-of select="normalize-space(regex-group(1))"/>
                 </xsl:matching-substring>
             </xsl:analyze-string>
         </xsl:variable>
@@ -127,7 +131,7 @@
                         </cei:physicalDesc>
                         <cei:auth>
                             <cei:sealDesc>
-                                <xsl:for-each select="tokenize(string-join($regest/cei:abstract//text()), 'S\d?:')[position() > 1]">
+                                <xsl:for-each select="tokenize(string-join($full_text//text()), 'S\d?:')[position() > 1]">
                                     <cei:seal>
                                         <xsl:value-of select="normalize-space(.)"/>
                                     </cei:seal>
