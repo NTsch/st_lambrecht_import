@@ -47,10 +47,8 @@
         <!--get the following sibling p that is not marked with color-->
         <xsl:variable name="regest">
             <cei:abstract>
-                <xsl:element name="cei:{local-name()}">
                     <xsl:copy-of select="@*"/>
                     <xsl:apply-templates select="$full_text"/>
-                </xsl:element>
             </cei:abstract>
         </xsl:variable>
         
@@ -70,7 +68,7 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+.*)[-–].*\d{{4}}">
+            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zαβγ/]*)[-–]">
                 <xsl:matching-substring>
                     <xsl:value-of select="normalize-space(regex-group(1))"/>
                 </xsl:matching-substring>
@@ -97,18 +95,18 @@
         <cei:text type='charter'>
             <cei:front/>
             <cei:body>
-                <cei:idno>
+                <cei:idno id="{normalize-space($idno)}">
                     <xsl:value-of select="normalize-space($idno)"/>
                 </cei:idno>
                 <cei:chDesc>
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>
-                        <cei:date>
+                        <cei:date value="99999999">
                             <xsl:value-of select="$date"/>
                         </cei:date>
-                        <cei:place>
+                        <cei:placeName>
                             <xsl:value-of select="normalize-space($place)"/>
-                        </cei:place>
+                        </cei:placeName>
                     </cei:issued>
                     <cei:witnessOrig>
                         <cei:traditioForm>
@@ -149,22 +147,18 @@
             <xsl:when test=".[text()[contains(., ' – ') and not(./following-sibling::text()[contains(., ' – ')])]]">
                 <!--get all text before the endline after " – ", usually followed by "Org. P"-->
                 <xsl:variable name="endline-begin" select="count(.//text()[contains(., ' – ') and not(./following-sibling::text()[contains(., ' – ')])]/preceding-sibling::node())"/>
-                <cei:p>
-                    <xsl:copy-of select="@*"/>
-                    <xsl:for-each select="node()[position() &lt;= $endline-begin]">
-                        <xsl:apply-templates select="."/>
-                    </xsl:for-each>
-                    <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="([\s\S]+)–">
-                        <xsl:matching-substring>
-                            <xsl:value-of select="normalize-space(regex-group(1))"/>
-                        </xsl:matching-substring>
-                    </xsl:analyze-string>
-                </cei:p>
+                <xsl:copy-of select="@*"/>
+                <xsl:for-each select="node()[position() &lt;= $endline-begin]">
+                    <xsl:apply-templates select="."/>
+                </xsl:for-each>
+                <xsl:analyze-string select="node()[position() = $endline-begin + 1]" regex="([\s\S]+)–">
+                    <xsl:matching-substring>
+                        <xsl:value-of select="normalize-space(regex-group(1))"/>
+                    </xsl:matching-substring>
+                </xsl:analyze-string>
             </xsl:when>
             <xsl:otherwise>
-                <cei:p>
-                    <xsl:apply-templates/>
-                </cei:p>
+                <xsl:apply-templates/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
