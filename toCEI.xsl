@@ -68,7 +68,7 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zαβγ/]*)[-–]">
+            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zA-Zαβγ/]*)[-–]">
                 <xsl:matching-substring>
                     <xsl:value-of select="normalize-space(regex-group(1))"/>
                 </xsl:matching-substring>
