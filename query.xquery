@@ -4,7 +4,7 @@ declare namespace cei = "http://www.monasterium.net/NS/cei";
 
 <results>{
 let $output := collection('data/output')
-for $data in $output//cei:place
+for $data in $output//cei:date
 (:where not($data/text()):)
 return <result file="{(substring-after($data/base-uri(), 'output/'), $data/ancestor::cei:text[@type="charter"]//cei:idno/text())}">{$data}</result>
 }</results>

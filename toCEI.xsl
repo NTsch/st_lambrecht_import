@@ -101,7 +101,87 @@
                 <cei:chDesc>
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>
-                        <cei:date value="99999999">
+                        <cei:date>
+                            <xsl:attribute name="value">
+                                <xsl:variable name='year'>
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                        <xsl:matching-substring>
+                                            <xsl:value-of select="regex-group(1)"/>
+                                        </xsl:matching-substring>
+                                    </xsl:analyze-string>
+                                </xsl:variable>
+                                <xsl:variable name='month'>
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                        <xsl:matching-substring>
+                                            <xsl:value-of select="regex-group(2)"/>
+                                        </xsl:matching-substring>
+                                    </xsl:analyze-string>
+                                </xsl:variable>
+                                <xsl:variable name='day'>
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                        <xsl:matching-substring>
+                                            <xsl:value-of select="regex-group(3)"/>
+                                        </xsl:matching-substring>
+                                    </xsl:analyze-string>
+                                </xsl:variable>
+                                <xsl:choose>
+                                    <xsl:when test="$year">
+                                        <xsl:value-of select="$year"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="9999"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:choose>
+                                    <xsl:when test="$month = 'I'">
+                                        <xsl:value-of select="01"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'II'">
+                                        <xsl:value-of select="02"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'III'">
+                                        <xsl:value-of select="03"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'IV'">
+                                        <xsl:value-of select="04"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'V'">
+                                        <xsl:value-of select="05"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'VI'">
+                                        <xsl:value-of select="06"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'VII'">
+                                        <xsl:value-of select="07"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'VIII'">
+                                        <xsl:value-of select="08"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'IX'">
+                                        <xsl:value-of select="09"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'X'">
+                                        <xsl:value-of select="10"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'XI'">
+                                        <xsl:value-of select="11"/>
+                                    </xsl:when>
+                                    <xsl:when test="$month = 'XII'">
+                                        <xsl:value-of select="12"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="99"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:choose>
+                                    <xsl:when test="$day">
+                                        <xsl:value-of select="$day"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="99"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:attribute>
                             <xsl:value-of select="$date"/>
                         </cei:date>
                         <cei:placeName>
