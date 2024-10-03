@@ -3,131 +3,56 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1375-1400).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">172</duration>
-            <message level="Error" line="28" column="30">cvc-complex-type.2.4.d: Invalid content was
+            <duration unit="msec">142</duration>
+            <message level="Error" line="30" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="413" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="413" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="434" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="439" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="439" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="460" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="465" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="465" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="491" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="496" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="496" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="517" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2264" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2264" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2282" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1500-1525).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">174</duration>
+            <duration unit="msec">117</duration>
             <message level="Error" line="27" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="2108" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2108" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2126" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1700-1725).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">106</duration>
+            <duration unit="msec">80</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
+            <message level="Error" line="3281" column="48">cvc-pattern-valid: Value '17259955' is
+                not facet-valid with respect to pattern
+                '-?[129]?[0-9][0-9][0-9][019][0-9][01239][0-9]' for type
+                'normalizedDateValue'.</message>
+            <message level="Error" line="3281" column="48">cvc-attribute.3: The value '17259955' of
+                attribute 'value' on element 'cei:date' is not valid with respect to its type,
+                'normalizedDateValue'.</message>
+            <message level="Error" line="3283" column="30">cvc-assertion.failure: Assertion failed
+                for schema type '#anonymous'. i18n:wrong-date-format-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1425-1450).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">170</duration>
+            <duration unit="msec">142</duration>
             <message level="Error" line="28" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="979" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="979" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="999" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1613" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1613" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1635" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2827" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2827" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2847" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4357" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4357" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4375" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4677" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4677" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4697" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="5050" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="5050" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="5070" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1725-1750).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">87</duration>
+            <duration unit="msec">68</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -137,17 +62,10 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1525-1550).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">186</duration>
+            <duration unit="msec">124</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="801" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="801" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="819" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
             <message level="Error" line="2284" column="30">cvc-minLength-valid: Value '' with length
                 = '0' is not facet-valid with respect to minLength '1' for type
                 'idnoValue'.</message>
@@ -161,38 +79,17 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1575-1600).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">182</duration>
+            <duration unit="msec">130</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="1223" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1223" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1244" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4816" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4816" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4837" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="6149" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="6149" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="6167" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1550-1575).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">212</duration>
+            <duration unit="msec">166</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -202,73 +99,17 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1400-1425).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">183</duration>
+            <duration unit="msec">119</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="231" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="231" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="255" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3413" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3413" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3431" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3533" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3533" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3551" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3556" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3556" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3574" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3835" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3835" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3854" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4010" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4010" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4029" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4060" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4060" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4079" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4084" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4084" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4102" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1675-1700).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">134</duration>
+            <duration unit="msec">99</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -285,7 +126,7 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1625-1650).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">119</duration>
+            <duration unit="msec">87</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -295,219 +136,16 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1475-1500).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">280</duration>
+            <duration unit="msec">189</duration>
             <message level="Error" line="26" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="323" column="30">cvc-minLength-valid: Value '' with length
+            <message level="Error" line="5252" column="30">cvc-minLength-valid: Value '' with length
                 = '0' is not facet-valid with respect to minLength '1' for type
                 'idnoValue'.</message>
-            <message level="Error" line="323" column="30">cvc-complex-type.2.2: Element 'cei:idno'
+            <message level="Error" line="5252" column="30">cvc-complex-type.2.2: Element 'cei:idno'
                 must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="341" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="471" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="471" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="489" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="548" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="548" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="569" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="574" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="574" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="597" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="673" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="673" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="692" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="887" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="887" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="906" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1304" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1304" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1323" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1328" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1328" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1347" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1495" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1495" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1514" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1519" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1519" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1538" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1566" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1566" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1585" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2002" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2002" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2021" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2026" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2026" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2045" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2050" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2050" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2069" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2609" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2609" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2628" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2802" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2802" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2821" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2826" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2826" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2845" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2992" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2992" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3011" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3089" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3089" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3108" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3231" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3231" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3251" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3775" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3775" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3794" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4319" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4319" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4338" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4532" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4532" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4551" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4627" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4627" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4646" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="5396" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="5396" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="5414" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="6877" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="6877" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="6895" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="7646" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="7646" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="7665" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="7741" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="7741" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="7759" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="8129" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="8129" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="8148" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="8509" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="8509" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="8528" column="20">cvc-assertion.failure: Assertion failed
+            <message level="Error" line="5270" column="20">cvc-assertion.failure: Assertion failed
                 for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
@@ -515,31 +153,17 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1350-1375).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">152</duration>
+            <duration unit="msec">100</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="2543" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2543" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2564" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2771" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2771" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2794" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1751-1786).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">64</duration>
+            <duration unit="msec">50</duration>
             <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -549,7 +173,7 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1000-1299).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">132</duration>
+            <duration unit="msec">93</duration>
             <message level="Error" line="27" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -559,7 +183,7 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1650-1675).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">164</duration>
+            <duration unit="msec">136</duration>
             <message level="Error" line="27" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
@@ -583,54 +207,26 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1300-1350).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">131</duration>
+            <duration unit="msec">89</duration>
             <message level="Error" line="29" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="1103" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1103" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1121" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
     <validationResult>
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1600-1625).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">161</duration>
+            <duration unit="msec">115</duration>
             <message level="Error" line="27" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="2991" column="30">cvc-minLength-valid: Value '' with length
+            <message level="Error" line="5465" column="30">cvc-minLength-valid: Value '' with length
                 = '0' is not facet-valid with respect to minLength '1' for type
                 'idnoValue'.</message>
-            <message level="Error" line="2991" column="30">cvc-complex-type.2.2: Element 'cei:idno'
+            <message level="Error" line="5465" column="30">cvc-complex-type.2.2: Element 'cei:idno'
                 must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3011" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3231" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3231" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3249" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="3254" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="3254" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="3272" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="5187" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="5187" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="5207" column="20">cvc-assertion.failure: Assertion failed
+            <message level="Error" line="5485" column="20">cvc-assertion.failure: Assertion failed
                 for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>
@@ -638,79 +234,16 @@
         <charterUri>/db/niklas/local_validation/output/out_Regesten(1450-1475).xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">217</duration>
-            <message level="Error" line="25" column="30">cvc-complex-type.2.4.d: Invalid content was
+            <duration unit="msec">150</duration>
+            <message level="Error" line="27" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
-            <message level="Error" line="451" column="30">cvc-minLength-valid: Value '' with length
+            <message level="Error" line="7380" column="30">cvc-minLength-valid: Value '' with length
                 = '0' is not facet-valid with respect to minLength '1' for type
                 'idnoValue'.</message>
-            <message level="Error" line="451" column="30">cvc-complex-type.2.2: Element 'cei:idno'
+            <message level="Error" line="7380" column="30">cvc-complex-type.2.2: Element 'cei:idno'
                 must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="471" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="796" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="796" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="816" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="821" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="821" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="839" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="1312" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="1312" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="1330" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2063" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2063" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2081" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2086" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2086" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2104" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2187" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2187" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2205" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="2235" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="2235" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="2253" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="4642" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="4642" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="4660" column="20">cvc-assertion.failure: Assertion failed
-                for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
-            <message level="Error" line="6927" column="30">cvc-minLength-valid: Value '' with length
-                = '0' is not facet-valid with respect to minLength '1' for type
-                'idnoValue'.</message>
-            <message level="Error" line="6927" column="30">cvc-complex-type.2.2: Element 'cei:idno'
-                must have no element [children], and the value must be valid.</message>
-            <message level="Error" line="6945" column="20">cvc-assertion.failure: Assertion failed
+            <message level="Error" line="7399" column="20">cvc-assertion.failure: Assertion failed
                 for schema type '#anonymous'. i18n:charter-signature-required-message. </message>
         </report>
     </validationResult>

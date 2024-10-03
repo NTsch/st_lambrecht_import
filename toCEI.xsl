@@ -68,7 +68,7 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zA-Zαβγ/]*)[-–]">
+            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zA-Zαβγ/]*\d?)\s?[-–]">
                 <xsl:matching-substring>
                     <xsl:value-of select="normalize-space(regex-group(1))"/>
                 </xsl:matching-substring>
@@ -104,81 +104,81 @@
                         <cei:date>
                             <xsl:attribute name="value">
                                 <xsl:variable name='year'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
                                         <xsl:matching-substring>
                                             <xsl:value-of select="regex-group(1)"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:variable name='month'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
                                         <xsl:matching-substring>
-                                            <xsl:value-of select="regex-group(2)"/>
+                                            <xsl:value-of select="normalize-space(regex-group(2))"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:variable name='day'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?\s?([IVX]+)?\s?(\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
                                         <xsl:matching-substring>
-                                            <xsl:value-of select="regex-group(3)"/>
+                                            <xsl:value-of select="normalize-space(regex-group(3))"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:choose>
-                                    <xsl:when test="$year">
+                                    <xsl:when test="matches($year, '\d{4}')">
                                         <xsl:value-of select="$year"/>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:value-of select="9999"/>
+                                        <xsl:text>9999</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                                 <xsl:choose>
                                     <xsl:when test="$month = 'I'">
-                                        <xsl:value-of select="01"/>
+                                        <xsl:text>01</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'II'">
-                                        <xsl:value-of select="02"/>
+                                        <xsl:text>02</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'III'">
-                                        <xsl:value-of select="03"/>
+                                        <xsl:text>03</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'IV'">
-                                        <xsl:value-of select="04"/>
+                                        <xsl:text>04</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'V'">
-                                        <xsl:value-of select="05"/>
+                                        <xsl:text>05</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'VI'">
-                                        <xsl:value-of select="06"/>
+                                        <xsl:text>06</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'VII'">
-                                        <xsl:value-of select="07"/>
+                                        <xsl:text>07</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'VIII'">
-                                        <xsl:value-of select="08"/>
+                                        <xsl:text>08</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'IX'">
-                                        <xsl:value-of select="09"/>
+                                        <xsl:text>09</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'X'">
-                                        <xsl:value-of select="10"/>
+                                        <xsl:text>10</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'XI'">
-                                        <xsl:value-of select="11"/>
+                                        <xsl:text>11</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$month = 'XII'">
-                                        <xsl:value-of select="12"/>
+                                        <xsl:text>12</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:value-of select="99"/>
+                                        <xsl:text>99</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                                 <xsl:choose>
-                                    <xsl:when test="$day">
+                                    <xsl:when test="matches(normalize-space($day), '\d{2}')">
                                         <xsl:value-of select="$day"/>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:value-of select="99"/>
+                                        <xsl:text>99</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:attribute>
