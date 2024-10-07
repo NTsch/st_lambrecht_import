@@ -68,7 +68,7 @@
             <xsl:value-of select="tokenize(string-join($regest/cei:abstract//text()), ' – (?=.+S:)', ';j')[last()]"/>
         </xsl:variable>
         <xsl:variable name="idno">
-            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zA-Zαβγ/]*\d?)\s?[-–]">
+            <xsl:analyze-string select="." regex="(I+/\d+[\sa-zA-Zαβγ/]*\d?)\s?(\([!?sic]+\)\s?)?[-–]">
                 <xsl:matching-substring>
                     <xsl:value-of select="normalize-space(regex-group(1))"/>
                 </xsl:matching-substring>
@@ -104,29 +104,29 @@
                         <cei:date>
                             <xsl:attribute name="value">
                                 <xsl:variable name='year'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="(\d{{4}})">
                                         <xsl:matching-substring>
                                             <xsl:value-of select="regex-group(1)"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:variable name='month'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="\s([IVX]+)\b" flags="!">
                                         <xsl:matching-substring>
-                                            <xsl:value-of select="normalize-space(regex-group(2))"/>
+                                            <xsl:value-of select="normalize-space(regex-group(1))"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:variable name='day'>
-                                    <xsl:analyze-string select="$date" regex="^\(?(\d{{4}})?\)?(\s[IVX]+)?(\s\d\d)?">
+                                    <xsl:analyze-string select="$date" regex="\s(\d\d)\b" flags="!">
                                         <xsl:matching-substring>
-                                            <xsl:value-of select="normalize-space(regex-group(3))"/>
+                                            <xsl:value-of select="normalize-space(regex-group(1))"/>
                                         </xsl:matching-substring>
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:choose>
-                                    <xsl:when test="matches($year, '\d{4}')">
-                                        <xsl:value-of select="$year"/>
+                                    <xsl:when test="$year">
+                                        <xsl:value-of select="substring($year, 1, 4)"/>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text>9999</xsl:text>
