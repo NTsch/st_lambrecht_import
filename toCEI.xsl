@@ -42,9 +42,8 @@
     </xsl:template>
     
     <xsl:template match="p[contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]]">
-        <xsl:variable name="full_text" select="following-sibling::p[not(contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')])][1]"/>
-
-        <!--get the following sibling p that is not marked with color-->
+        <xsl:variable name="full_text" select="following-sibling::p[not(contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]) and generate-id(preceding-sibling::p[contains(@rend, 'background-color(#ffff00)') or hi[contains(@rend, 'background-color(#ffff00)')]][1]) = generate-id(current())]"/>
+        <!--get all following siblings p until the next one that is marked with color-->
         <xsl:variable name="regest">
             <cei:abstract>
                     <xsl:copy-of select="@*"/>
