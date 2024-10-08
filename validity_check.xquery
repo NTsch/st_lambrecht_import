@@ -11,7 +11,7 @@ declare namespace cei = "http://www.monasterium.net/NS/cei";
 :)
 (:validate collection:)
 for $charter in collection('/db/niklas/local_validation/output')
-(:where contains($charter/base-uri(), '1000'):)
+where contains($charter/base-uri(), '1000')
 let $xml := <cei:cei>{$charter//cei:text[@type='charter']}</cei:cei>
 let $schema := doc('/db/XRX.src/mom/app/cei/xsd/cei.xsd')
 let $valrep := validation:jaxv-report($xml, $schema, 'http://www.w3.org/XML/XMLSchema/v1.1')

@@ -124,7 +124,7 @@
                                     </xsl:analyze-string>
                                 </xsl:variable>
                                 <xsl:choose>
-                                    <xsl:when test="$year">
+                                    <xsl:when test="$year != ''">
                                         <xsl:value-of select="substring($year, 1, 4)"/>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -174,7 +174,7 @@
                                 </xsl:choose>
                                 <xsl:choose>
                                     <xsl:when test="matches(normalize-space($day), '\d{2}')">
-                                        <xsl:value-of select="$day"/>
+                                        <xsl:value-of select="substring($day, 1, 2)"/>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text>99</xsl:text>
@@ -187,35 +187,86 @@
                             <xsl:value-of select="normalize-space($place)"/>
                         </cei:placeName>
                     </cei:issued>
-                    <cei:witnessOrig>
-                        <cei:traditioForm>
-                            <xsl:if test="contains($endline, '– Or. P')">
-                                <xsl:text>Original</xsl:text>
-                            </xsl:if>
-                        </cei:traditioForm>
-                        <cei:archIdentifier/>
-                        <cei:physicalDesc>
-                            <cei:material>
-                                <xsl:choose>
-                                    <xsl:when test="contains($endline, '– Or. Perg')">
-                                        <xsl:text>Pergament</xsl:text>
-                                    </xsl:when>
-                                    <xsl:when test="contains($endline, '– Or. Pap')">
-                                        <xsl:text>Papier</xsl:text>
-                                    </xsl:when>
-                                </xsl:choose>
-                            </cei:material>
-                        </cei:physicalDesc>
-                        <cei:auth>
-                            <cei:sealDesc>
-                                <xsl:for-each select="tokenize(string-join($full_text//text()), 'S\d?:')[position() > 1]">
-                                    <cei:seal>
-                                        <xsl:value-of select="normalize-space(.)"/>
-                                    </cei:seal>
+                    <xsl:choose>
+                        <xsl:when test="matches(string-join($full_text//text()), '– \d Or. P')">
+                            <xsl:variable name="num_charts">
+                                <xsl:analyze-string select="string-join($full_text//text())" regex="– (\d) Or. P">
+                                    <xsl:matching-substring>
+                                        <xsl:value-of select="xs:integer(regex-group(1))"/>
+                                    </xsl:matching-substring>
+                                </xsl:analyze-string>
+                            </xsl:variable>
+                            <cei:witListPar>
+                                <xsl:for-each select="1 to $num_charts">
+                                    <cei:witness n="{position()}">
+                                        <cei:archIdentifier/>
+                                        <cei:traditioForm>
+                                            <xsl:choose>
+                                                <xsl:when test="position() = 1">
+                                                    <xsl:text>Original</xsl:text>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:text>Abschrift</xsl:text>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </cei:traditioForm>
+                                        <cei:physicalDesc>
+                                            <cei:material>
+                                                <xsl:choose>
+                                                    <xsl:when test="contains(string-join($full_text//text()), 'Or. Perg')">
+                                                        <xsl:text>Pergament</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:when test="contains(string-join($full_text//text()), 'Or. Pap')">
+                                                        <xsl:text>Papier</xsl:text>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                            </cei:material>
+                                        </cei:physicalDesc>
+                                        <cei:auth>
+                                            <cei:sealDesc>
+                                                <xsl:for-each select="tokenize(string-join($full_text//text()), 'S\d?:')[position() > 1]">
+                                                    <cei:seal>
+                                                        <xsl:value-of select="normalize-space(.)"/>
+                                                    </cei:seal>
+                                                </xsl:for-each>
+                                            </cei:sealDesc>
+                                        </cei:auth>
+                                    </cei:witness>
                                 </xsl:for-each>
-                            </cei:sealDesc>
-                        </cei:auth>
-                    </cei:witnessOrig>
+                            </cei:witListPar>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <cei:witnessOrig>
+                             <cei:traditioForm>
+                                 <xsl:if test="contains($endline, '– Or. P')">
+                                     <xsl:text>Original</xsl:text>
+                                 </xsl:if>
+                             </cei:traditioForm>
+                             <cei:archIdentifier/>
+                             <cei:physicalDesc>
+                                 <cei:material>
+                                     <xsl:choose>
+                                         <xsl:when test="contains($endline, '– Or. Perg')">
+                                             <xsl:text>Pergament</xsl:text>
+                                         </xsl:when>
+                                         <xsl:when test="contains($endline, '– Or. Pap')">
+                                             <xsl:text>Papier</xsl:text>
+                                         </xsl:when>
+                                     </xsl:choose>
+                                 </cei:material>
+                             </cei:physicalDesc>
+                             <cei:auth>
+                                 <cei:sealDesc>
+                                     <xsl:for-each select="tokenize(string-join($full_text//text()), 'S\d?:')[position() > 1]">
+                                         <cei:seal>
+                                             <xsl:value-of select="normalize-space(.)"/>
+                                         </cei:seal>
+                                     </xsl:for-each>
+                                 </cei:sealDesc>
+                             </cei:auth>
+                            </cei:witnessOrig>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </cei:chDesc>
             </cei:body>
         </cei:text>
