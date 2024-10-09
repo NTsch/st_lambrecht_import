@@ -10,12 +10,12 @@ declare function functx:non-distinct-values
    return $val[count($seq[. = $val]) > 1]
  } ;
 
-<results>{
+(:<results>{
 let $output := collection('data/output')
 for $data in $output//cei:date
-(:where not($data/text()):)
+(\:where not($data/text()):\)
 return <result file="{(substring-after($data/base-uri(), 'output/'), $data/ancestor::cei:text[@type="charter"]//cei:idno/text())}">{$data}</result>
-}</results>
+}</results>:)
 
 (:<results>{
 let $input := collection('data/regesten_xml')
@@ -24,6 +24,6 @@ for $data in $input//p/text()[contains(., ' – ') and not(./following-sibling::
 return <result file="{substring-after($data/base-uri(), 'regesten_xml/')}">{$data}</result>
 }</results>:)
 
-(:let $output := collection('data/output')
+let $output := collection('data/output')
 let $ids := $output//cei:idno/text()
-return functx:non-distinct-values($ids):)
+return functx:non-distinct-values($ids)
