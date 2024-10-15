@@ -94,9 +94,18 @@
         <cei:text type='charter'>
             <cei:front/>
             <cei:body>
-                <cei:idno id="{normalize-space($idno)}">
-                    <xsl:value-of select="normalize-space($idno)"/>
-                </cei:idno>
+                <xsl:choose>
+                    <xsl:when test="$idno != ''">
+                        <cei:idno id="{normalize-space($idno)}">
+                            <xsl:value-of select="normalize-space($idno)"/>
+                        </cei:idno>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <cei:idno id="{concat(./base-uri(), '_', position())}">
+                            <xsl:value-of select="concat(./base-uri(), '_', position())"/>
+                        </cei:idno>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <cei:chDesc>
                     <xsl:copy-of select="$regest"/>
                     <cei:issued>

@@ -10,8 +10,8 @@ declare namespace cei = "http://www.monasterium.net/NS/cei";
 (:let $charter := doc(xmldb:encode('/db/mom-data/metadata.charter.saved/tag:www.monasterium.net,2011:#charter#AT-StiAL#LambachOSB#1454_VIII_20.xml'))
 :)
 (:validate collection:)
-for $charter in collection('/db/niklas/local_validation/output')
-where contains($charter/base-uri(), '1000')
+for $charter in collection('/db/niklas/imports/output')
+(:where contains($charter/base-uri(), '1000'):)
 let $xml := <cei:cei>{$charter//cei:text[@type='charter']}</cei:cei>
 let $schema := doc('/db/XRX.src/mom/app/cei/xsd/cei.xsd')
 let $valrep := validation:jaxv-report($xml, $schema, 'http://www.w3.org/XML/XMLSchema/v1.1')

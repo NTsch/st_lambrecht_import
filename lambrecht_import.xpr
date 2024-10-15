@@ -10,27 +10,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>data/regesten_xml/Regesten(1550-1575).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>query.xquery</String>
+                                    <String>corporize.xquery</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -54,7 +34,7 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>localhost_query</String>
+                                        <String>live_query</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -70,7 +50,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>data/output/out_Regesten(1400-1425).xml</String>
+                                    <String>data/regesten_xml/Regesten(1675-1700).xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -110,7 +90,167 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>data/output/out_Regesten(1000-1299).xml</String>
+                                    <String>data/regesten_xml/Regesten(1550-1575).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1525-1550).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1500-1525).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1475-1500).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1450-1475).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1425-1450).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1400-1425).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1375-1400).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/regesten_xml/Regesten(1300-1350).xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -131,6 +271,66 @@
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>data/regesten_xml/Regesten(1000-1299).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>query.xquery</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>local_query</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XQUERY</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/output/out_Regesten(1400-1425).xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>toCEI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>data/output/out_Regesten(1000-1299).xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -210,187 +410,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>data/regesten_xml/Regesten(1375-1400).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1450-1475).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1400-1425).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1525-1550).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1425-1450).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
                                     <String>oxygen:/eXist-db%20localhost$eXist-db%20localhost/db/niklas/local_validation/output/out_Regesten(1525-1550).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1500-1525).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1675-1700).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1475-1500).xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>toCEI</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>data/regesten_xml/Regesten(1300-1350).xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
