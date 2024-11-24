@@ -11,8 +11,8 @@ declare function functx:non-distinct-values
    return $val[count($seq[. = $val]) > 1]
  } ;:)
 
-let $daniel_ids := distinct-values(doc('combination/MOMExcelImport_StiAL_TA_bearb_korrig_niklas.xml')//cell[@n='1']/text())
-let $new_regest_ids := distinct-values(doc('combination/MOMExcelImport_StiAL_TA_bearb_korrig_niklas.xml')//cell[@n='1' and following-sibling::cell[@n='17' and text() != '' and not(contains(text(), 'Inhalt?'))]]/text())
+let $daniel_ids := distinct-values(doc('/db/niklas/import/lambrecht/combination/MOMExcelImport_StiAL_TA_bearb_korrig_niklas.xml')//cell[@n='1']/text())
+let $new_regest_ids := distinct-values(doc('/db/niklas/import/lambrecht/combination/MOMExcelImport_StiAL_TA_bearb_korrig_niklas.xml')//cell[@n='1' and following-sibling::cell[@n='17' and text() != '' and not(contains(text(), 'Inhalt?'))]]/text())
 let $my_ids := distinct-values(doc('corpus.xml')//cei:text[@type='charter']//cei:idno/@id/data())
 for $id in $new_regest_ids
 where not($id = $my_ids)
