@@ -3,10 +3,13 @@
         <charterUri>/db/niklas/imports/lambrecht/combination/corpus.xml</charterUri>
         <report>
             <status>invalid</status>
-            <duration unit="msec">2510</duration>
-            <message level="Error" line="31" column="30">cvc-complex-type.2.4.d: Invalid content was
+            <duration unit="msec">5959</duration>
+            <message level="Error" line="36" column="30">cvc-complex-type.2.4.d: Invalid content was
                 found starting with element 'cei:text'. No child element is expected at this
                 point.</message>
+            <message level="Error" line="149688" column="29" repeat="710">cvc-complex-type.2.4.a:
+                Invalid content was found starting with element 'cei:chDesc'. One of
+                '{"http://www.monasterium.net/NS/cei":back}' is expected.</message>
         </report>
     </validationResult>
 </result>

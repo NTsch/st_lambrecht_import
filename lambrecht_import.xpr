@@ -10,11 +10,31 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>combination/query.xquery</String>
+                                    <String>validity_check.xquery</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>local_query</String>
+                                        <String>localhost_query</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XQUERY</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>combination/pipeline.xquery</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>localhost_query</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -50,7 +70,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>validity_check.xquery</String>
+                                    <String>query.xquery</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -90,11 +110,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>oxygen:/eXist$monasterium-localhost/db/niklas/import/lambrecht/combination/insert_imgs.xquery</String>
+                                    <String>combination/query.xquery</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>localhost_query</String>
+                                        <String>local_query</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -110,7 +130,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>query.xquery</String>
+                                    <String>oxygen:/eXist$monasterium-localhost/db/niklas/import/lambrecht/combination/insert_imgs.xquery</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -676,7 +696,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>file:/home/niklas/Documents/uni/monasterium/import/st_lambrecht/combination/convert_new_entries.xsl</String>
+                                    <String>convert_new_entries.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
