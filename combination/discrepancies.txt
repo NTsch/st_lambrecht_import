@@ -1,11 +1,11 @@
 Ausgelassen, weil in der Tabelle rot:
 I/710a
 I/710b
-Existieren bei mir, aber nicht in der Tabelle:
+Existieren in Word-Dokumenten, aber nicht in der Tabelle:
 III/275a
 III/279
 III/343
-Existieren bei mir, sind in der Tabelle leer:
+Existieren in Word-Dokumenten, sind in der Tabelle leer:
 III/240
 III/241
 III/264
