@@ -8,6 +8,10 @@
     exclude-result-prefixes="xs math"
     version="3.0">
     
+    <!--used on TEI created from the spreadsheet-->
+    <!--utilizes new_entries_to_add-->
+    <!--creates CEI entries for material that wasn't in the original dump-->
+    
     <xsl:template match='/'>
         <xsl:apply-templates/>
     </xsl:template>
