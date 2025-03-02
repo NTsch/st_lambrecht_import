@@ -8,6 +8,6 @@ let $current_ids := $current_chars//cei:body/cei:idno/@id/data()
 for $entry in doc('new_entries_cei.xml')//cei:text[@type='charter']
 where $entry//cei:graphic/@url/data() != ''
 let $id := $entry//cei:body/cei:idno/@id/data()
+where matches($id, 'I+/\d+')
 where not($id = $current_ids)
 return insert node $entry after $current_chars[last()]
-

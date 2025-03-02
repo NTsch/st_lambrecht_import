@@ -3,24 +3,20 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:math="http://www.w3.org/2005/xpath-functions/math"
     xmlns:cei="http://www.monasterium.net/NS/cei" 
-    xmlns:md="my_data"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs math"
     version="3.0">
     
     <!--used on TEI created from the spreadsheet-->
-    <!--utilizes new_entries_to_add-->
     <!--creates CEI entries for material that wasn't in the original dump-->
     
     <xsl:template match='/'>
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:variable name="new_entries" select='doc("new_entries_to_add.xml")//md:id/text()'/>
-    
     <xsl:template match="TEI">
         <cei:cei>
-            <xsl:apply-templates select="//row[cell[@n='1' and text() = $new_entries]]"/>
+            <xsl:apply-templates select="//row[cell[@n='1']]"/>
         </cei:cei>
     </xsl:template>
     
